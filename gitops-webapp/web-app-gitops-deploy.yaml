@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: web-app-gitops
+  name: web-app-gitops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-app-gitops
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: web-app-gitops
+    spec:
+      containers:
+      - image: quay.io/redhattraining/hello-world-nginx
+        name: hello-world-nginx
+        resources: {}
+status: {}
